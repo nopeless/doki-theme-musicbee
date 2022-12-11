@@ -6,6 +6,7 @@
   "scripts": {
     "build": "echo To build, go to buildSrc"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nopeless/doki-theme-musicbee.git"
