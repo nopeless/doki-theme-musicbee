@@ -1,49 +1,35 @@
-The Doki Theme: <<App>>
----
+# The Doki Theme: MusicBee
+
+Ever wanted your MusicBee to match your code editor style? Well you are in luck!
 
 ## Quick Theme Preview
 
-![Themes](https://raw.githubusercontent.com/doki-theme/doki-theme-jupyter/main/readmeAssets/quick_theme_preview.webp)
+### Gasai Yuno
+![1670743053886](image/README/1670743053886.png)
 
+## Aqua
 
-# [More Screenshots](https://github.com/doki-theme/doki-theme-jupyter/blob/main/albums/screenshot_album.md)
+![1670743102166](image/README/1670743102166.png)
+
+## Astolfo
+
+![1670743198903](image/README/1670743198903.png)
+
+## Chocola
+
+![1670743319194](image/README/1670743319194.png)
+
+## With code editor
+
+![1670742958063](image/README/1670742958063.png)
 
 ---
 
-# Documentation
+# Installation
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Miscellaneous](#miscellaneous)
-    - [Contributing](#contributing) 
-    - [Theme Requests](#theme-requests)
-    - [Helping the community](#enjoying-the-themes)
-    - [Feature Requests](#contributions)
+https://musicbee.fandom.com/wiki/Skins#Installing_a_custom_skin
 
-# Installation 
+## Contributions
 
-# Usage
-
-# Miscellaneous
-
-## Contributing
-
-If you want to get your workstation set up to work on the plugin,
-then you'll want to check out the [CONTRIBUTING.md](./CONTRIBUTING.md) for instructions on what is needed.
-
-## Theme Requests
-
-If you want your main squeeze to be featured in the Doki Theme suite, feel free to [submit a theme request](https://github.com/doki-theme/doki-master-theme/issues).
-
-## Enjoying the themes?
-
-Great! I am glad you like it!
-
-Be sure to ⭐ and share it with other weebs!
-
-## Contributions?
-
-I think your voice needs to be heard! You probably have good ideas, so feel free to submit your feedback as [an issue](https://github.com/doki-theme/doki-theme-jupyter/issues/new).
-
-Help make this plugin better!
+Currently I do not accept contributions
 

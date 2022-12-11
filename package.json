@@ -1,3 +1,27 @@
 {
-  "dependencies": {}
+  "name": "doki-theme-musicbee",
+  "version": "0.1.0",
+  "description": "DokiTheme to MusicBee skins",
+  "devDependencies": {},
+  "scripts": {
+    "build": "echo To build, go to buildSrc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nopeless/doki-theme-musicbee.git"
+  },
+  "keywords": [
+    "skin",
+    "musicbee",
+    "dokitheme",
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "author": "nopeless",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nopeless/doki-theme-musicbee/issues"
+  },
+  "homepage": "https://github.com/nopeless/doki-theme-musicbee#readme"
 }
