@@ -1,0 +1,51 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    
+    # Install yarn (beloved package manager)
+    - run: npm i -g yarn
+
+    # Fetch masterThemes
+    - run: ./getMasterThemes.sh && cd masterThemes && yarn install --frozen-lock-file && npm run generateTemplates
+
+    # Build stage
+    - run: cd buildSrc && yarn install --frozen-lock-file && npm run buildThemes
+  
+    # Create a release if the version has changed
+    - name: Version Check
+      id: check
+      uses: EndBug/version-check@v2.1.1
+
+    # Start producing artifact
+    - run: node scripts/replaceversion.js
+      if: steps.check.outputs.changed == 'true'
+
+    - name: Zip everything
+      if: steps.check.outputs.changed == 'true'
+      uses: vimtor/action-zip@v1.1
+      with:
+        files: src
+        dest: dist/dokitheme-musicbee-skins.zip
+
+    - name: Release the zip file
+      if: steps.check.outputs.changed == 'true'
+      uses: ncipollo/release-action@v1.11.2
+      with:
+        artifacts: "dist/dokitheme-musicbee-skins.zip"
+        tag: ${{ steps.check.outputs.version }}
+        bodyFile: "src/README.txt"

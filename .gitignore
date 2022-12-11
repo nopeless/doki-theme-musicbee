@@ -6,7 +6,6 @@ out/
 
 # JS
 node_modules/
-scripts/
 testAssets/
 
 # macOS
