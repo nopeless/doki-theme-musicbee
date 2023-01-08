@@ -10,4 +10,4 @@ Is the main page for this theme
 
 If you have a suggestion or issues with this skin, please let me know in the issues tab
 
-- nopeless
+Created by nopeless
