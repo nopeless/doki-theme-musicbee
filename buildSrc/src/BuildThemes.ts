@@ -154,7 +154,7 @@ const getStickers = (
 };
 
 console.log("Preparing to generate themes.");
-const themesDirectory = path.resolve(repoDirectory, "src", "musicbee-skins");
+const themesDirectory = path.resolve(repoDirectory, "out", "musicbee-skins");
 
 // Ensure directories exist
 {
@@ -164,8 +164,8 @@ const themesDirectory = path.resolve(repoDirectory, "src", "musicbee-skins");
     }
   };
 
-  e("src");
-  e("src", themesDirectory);
+  e("out");
+  e("out", themesDirectory);
 }
 
 const templateString = fs.readFileSync(
