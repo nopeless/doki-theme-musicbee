@@ -220,26 +220,31 @@ evaluateTemplates(
         accum[definition.information.id ?? 0] = definition;
         return accum;
       }, {});
-    const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
 
-    fs.writeFileSync(
-      path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
-      `export default ${finalDokiDefinitions};`
-    );
+    // This file is not needed
+    // const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
+
+    // fs.writeFileSync(
+    //   path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
+    //   `export default ${finalDokiDefinitions};`
+    // );
 
     return dokiThemes;
   })
-  .then((themes) => {
-    // write things for extension
-    for (const theme of themes) {
-      const filename = theme.definition.name.toLowerCase() + ".xml";
-      // write the files
-      fs.writeFileSync(
-        path.resolve(themesDirectory, filename),
-        fillInTemplateScript(templateString, theme.templateVariables)
-      );
-    }
-  })
+  // More dead code
+  // .then((themes) => {
+  //   // write things for extension
+  //   for (const theme of themes) {
+  //     const filename =
+  //       theme.definition.name.toLowerCase().replace(/[<>:"/\\|?*]/g, "") +
+  //       ".xml";
+  //     // write the files
+  //     fs.writeFileSync(
+  //       path.resolve(themesDirectory, filename),
+  //       fillInTemplateScript(templateString, theme.templateVariables)
+  //     );
+  //   }
+  // })
   .then(() => {
     console.log("Theme Generation Complete!");
   });
