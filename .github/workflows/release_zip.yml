@@ -32,7 +32,7 @@ jobs:
       uses: EndBug/version-check@v2.1.1
 
     # Start producing artifact
-    - run: node scripts/replaceversion.js && mv README.txt out
+    - run: node scripts/replaceversion.js && cp README.txt out/README.txt
       if: steps.check.outputs.changed == 'true'
 
     - name: Zip everything
