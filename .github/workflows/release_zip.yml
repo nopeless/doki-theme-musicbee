@@ -32,14 +32,14 @@ jobs:
       uses: EndBug/version-check@v2.1.1
 
     # Start producing artifact
-    - run: node scripts/replaceversion.js
+    - run: node scripts/replaceversion.js && mv README.txt out
       if: steps.check.outputs.changed == 'true'
 
     - name: Zip everything
       if: steps.check.outputs.changed == 'true'
       uses: vimtor/action-zip@v1.1
       with:
-        files: src
+        files: out
         dest: dist/dokitheme-musicbee-skins.zip
 
     - name: Release the zip file
@@ -48,4 +48,4 @@ jobs:
       with:
         artifacts: "dist/dokitheme-musicbee-skins.zip"
         tag: ${{ steps.check.outputs.version }}
-        bodyFile: "src/README.txt"
+        bodyFile: "README.txt"
