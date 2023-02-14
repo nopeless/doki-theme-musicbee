@@ -231,20 +231,19 @@ evaluateTemplates(
 
     return dokiThemes;
   })
-  // More dead code
-  // .then((themes) => {
-  //   // write things for extension
-  //   for (const theme of themes) {
-  //     const filename =
-  //       theme.definition.name.toLowerCase().replace(/[<>:"/\\|?*]/g, "") +
-  //       ".xml";
-  //     // write the files
-  //     fs.writeFileSync(
-  //       path.resolve(themesDirectory, filename),
-  //       fillInTemplateScript(templateString, theme.templateVariables)
-  //     );
-  //   }
-  // })
+  .then((themes) => {
+    // write things for extension
+    for (const theme of themes) {
+      const filename =
+        theme.definition.name.toLowerCase().replace(/[<>:"/\\|?*]/g, "") +
+        ".xml";
+      // write the files
+      fs.writeFileSync(
+        path.resolve(themesDirectory, filename),
+        fillInTemplateScript(templateString, theme.templateVariables)
+      );
+    }
+  })
   .then(() => {
     console.log("Theme Generation Complete!");
   });
